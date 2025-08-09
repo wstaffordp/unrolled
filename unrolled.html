@@ -2881,38 +2881,42 @@
 
           enemy_offsets_state = true
 
+          const enemy_offsets_horizontal_update = Array(48)
+          const enemy_offsets_vertical_update = Array(57)
           let k = 0
           let l
 
           while (k < 48) {
-            enemy_offsets_horizontal[k] = []
+            enemy_offsets_horizontal_update[k] = Array(0)
             l = 0
 
             while (l < 88) {
               if (enemy_offsets_map_horizontal[k][l] == true) {
-                enemy_offsets_horizontal[k].push(l)
+                enemy_offsets_horizontal_update[k].push(l)
               }
 
               l++
             }
 
+            enemy_offsets_horizontal[k] = enemy_offsets_horizontal_update[k]
             k++
           }
 
           k = 0
 
           while (k < 57) {
-            enemy_offsets_vertical[k] = []
+            enemy_offsets_vertical_update[k] = Array(0)
             l = 0
 
             while (l < 88) {
               if (enemy_offsets_map_vertical[k][l] == true) {
-                enemy_offsets_vertical[k].push(l)
+                enemy_offsets_vertical_update[k].push(l)
               }
 
               l++
             }
 
+            enemy_offsets_vertical[k] = enemy_offsets_vertical_update[k]
             k++
           }
 
